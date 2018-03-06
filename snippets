@@ -1,0 +1,31 @@
+'.source.go':
+  'fmt.Println()':
+    'prefix': 'pln'
+    'body': """
+fmt.Println($1)
+    """
+  'Println and Exit':
+    'prefix': 'plexit'
+    'body': """
+fmt.Println(${0})
+os.Exit(1)
+    """
+  'Println ("/---/")':
+    'prefix': 'pl-'
+    'body': """
+fmt.Println("/---------------------------------/")
+${0}
+    """
+  'template main package':
+    'prefix': 'tmain'
+    'body': """
+package main
+
+import "fmt"
+
+func main() {
+
+${0}
+
+}
+    """
